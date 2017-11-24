@@ -1,0 +1,30 @@
+﻿<Page xmlns:UC="using:UwpWithViewModel.UC" 
+    x:Class="UwpWithViewModel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UwpWithViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid x:Name="rootGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <MediaElement x:Name="player" />
+            <UC:SonglistUC Grid.Column="1" />
+            <UC:PlayerControlUC Grid.Row="1" Width="300" />
+
+        </Grid>
+
+        <ProgressRing x:Name="pr" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" />
+    </Grid>
+</Page>
